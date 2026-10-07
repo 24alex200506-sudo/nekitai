@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "buildCommand": "npm install -g pnpm && pnpm install && pnpm --filter @workspace/ai-workspace build",
+  "outputDirectory": "artifacts/ai-workspace/dist/public",
+  "installCommand": "npm install -g pnpm && pnpm install",
+  "framework": null,
+  "functions": {
+    "api/index.js": {
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
